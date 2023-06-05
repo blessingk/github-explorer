@@ -1,0 +1,13 @@
+<div>
+    <select [(ngModel)]="stateFilter">
+        <option value="open">Open</option>
+        <option value="closed">Closed</option>
+    </select>
+    <ul *ngIf="issues">
+        <li *ngFor="let issue of issues">
+            <p>{{ issue.title }}</p>
+            <p>State: {{ issue.state }}</p>
+            <p>Created at: {{ issue.created_at }}</p>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,24 @@
+<section>
+    <h3 style="padding: 20px">Search Repositories</h3>
+    <div class="example-button-row" style="display: block; padding: 20px">
+        <mat-form-field>
+            <mat-label>Search</mat-label>
+            <input matInput [(ngModel)]="searchTerm" placeholder="Search Repositories">
+        </mat-form-field>
+        <button mat-button (click)="search()">Basic</button>
+    </div>
+</section>
+<div>
+    <mat-list role="list" *ngIf="repositories">
+        <mat-list-item role="listitem" *ngFor="let repo of repositories.items">
+            {{ repo.name }}
+        </mat-list-item>
+        <mat-list-item role="listitem">Item 2</mat-list-item>
+        <mat-list-item role="listitem">Item 3</mat-list-item>
+      </mat-list>
+   <ul >
+        <li *ngFor="let repo of repositories.items">
+        <a [routerLink]="['/repository', repo.owner.login, repo.name]">{{ repo.name }}</a>
+        </li>
+    </ul>
+</div>

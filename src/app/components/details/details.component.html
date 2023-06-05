@@ -1,0 +1,8 @@
+<div *ngIf="repository">
+    <h2>{{ repository.name }}</h2>
+    <p>{{ repository.description }}</p>
+    <p>URL: <a [href]="repository.html_url">{{ repository.html_url }}</a></p>
+    <p>Forks: {{ repository.forks_count }}</p>
+    <p>Stargazers: {{ repository.stargazers_count }}</p>
+    <p>Open Issues: {{ repository.open_issues_count }}</p>
+</div>
